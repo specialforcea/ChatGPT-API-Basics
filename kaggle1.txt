@@ -1,0 +1,78 @@
+User's input was:  in a kaggle competition, when I submit from a notebook, does it rerun all the code including the training part?
+No, when you submit a notebook on Kaggle, it does not re-run all the code automatically. The results you've obtained within the notebook (including trained models) are serialized and saved. The saving is done so that when the notebook is submitted, it's the final model's parameters, the final output or the model's predictions that are passed, not the entire training process. 
+
+However, in the case of Kaggle Kernels, when you commit a Kernel it does run from top to bottom on Kaggle's servers and the results are saved. Therefore, if the Kernel includes a model training part, then, yes, it does re-run all the code including the training part. Keep in mind running or committing a Kernel and submitting for a competition are two different things. 
+
+It's a good practice to make sure your notebook can run from start to finish without any errors before committing or submitting on Kaggle.
+
+User's input was:  can I submit to a competition not using a notebook?
+Yes, you can submit to a Kaggle competition without using a notebook. You can run your code on your local machine (or any environment of your choice), generate the predictions, and then upload the submission file manually.
+
+Here are the steps for a typical submission:
+
+1. Train your model locally or wherever you want.
+2. Generate predictions on the competition's test dataset.
+3. Format the predictions in the form required by the competition rules.
+4. Save your predictions to a CSV, Excel, or JSON file.
+5. Log in to Kaggle and go to the "Submit Predictions" page for the competition.
+6. Upload your file and submit.
+
+Remember to follow the specific submission guidelines provided by the competition organizers.
+
+User's input was:  how to work on kaggle competitions from local vscode
+Working with Kaggle competitions from your local Visual Studio Code (VSCode) involves several steps:
+
+1. **Download the datasets:** First, you will need to download the competition datasets. You can do this manually from the Kaggle website or use the Kaggle API. 
+
+    - To use the Kaggle API, first install it using pip `pip install kaggle`. Then, you have to download your Kaggle JSON API key from Kaggle (In Kaggle go to Your Account -> API -> Create New API Key).
+    - Place the `kaggle.json` file in the location `~/.kaggle/kaggle.json` (for Windows users go to your user profile directory e.g `C:\Users\username\.kaggle\kaggle.json`).
+    - To download the data, you can run `kaggle competitions download -c <competition-name>` in your terminal, where `<competition-name>` is the name of the competition. The data will be downloaded in zip format and you need to unzip it.
+
+2. **Set up your workspace in VSCode:** Open up VSCode and set your working directory to where you have downloaded and extracted your datasets.
+
+3. **Data Analysis/Preprocessing:** Here you can use Python libraries like pandas, numpy, matplotlib, seaborn etc. to preprocess and analyse your data.
+
+4. **Model Training:** You can use machine learning libraries like TensorFlow, Keras, PyTorch, scikit-learn etc. for creating and training your models.
+
+5. **Prediction and Creating a Submission File:** Once your model is trained, use it to make predictions on the test set. Finally, you have to create a submission CSV file. The format of this submission file can be found in the Kaggle competition page.
+
+6. **Submission:** After creating your submission file, you can submit it manually through the Kaggle competition page. 
+
+Remember to install necessary packages in your environment, some important ones could be pandas, numpy, tensorflow, keras, scikit-learn, matplotlib etc. You can install them using pip, for example, `pip install pandas numpy tensorflow keras scikit-learn matplotlib`. 
+
+Keep in mind this is a gener
+
+User's input was:  what is the command to upload my local notebook to kaggle
+The command to upload your local notebook to Kaggle is not a direct command line interface operation. You should follow these steps:
+
+1) Navigate to your account on Kaggle
+2) Select 'Notebooks' in your profile
+3) Click on 'New Notebook'
+4) You will then have an option to 'Upload Notebook'
+5) You can select your local notebook file to upload
+
+However, If you are referring to uploading datasets to Kaggle via the command line, you will need the 'kaggle' API. 
+Here is an example:
+
+```bash
+kaggle datasets version -p /path/to/dataset -m "Your message here"
+```
+
+You can check the complete documentation about Kaggle API in https://github.com/Kaggle/kaggle-api
+
+User's input was:  how to sync my local changes in notebook with kaggle
+Kaggle doesn't have a direct way to sync local changes through command-line. However, here is a workaround for your situation:
+
+When you have made changes to your Jupyter notebook on your local machine and want to reflect those changes on Kaggle, you can do so in the following way:
+
+1. Save your Jupyter notebook on local after making changes.
+2. Go to your Kaggle account.
+3. Head over to your notebook on Kaggle.
+4. Click on the "File" option at the top of the notebook editor.
+5. Click on "Upload Notebook".
+6. Select your locally saved Jupyter notebook file that you want to upload.
+
+This will replace the existing notebook with your latest version. Make sure you click "Commit" so your changes are saved.
+
+Remember, all of above procedure has to be done manually and there is no API for this.
+
